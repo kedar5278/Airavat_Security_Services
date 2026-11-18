@@ -8,30 +8,30 @@ datasource db {
 }
 
 model Project {
-  id          String    @id @default(cuid())
+  id          String   @id @default(cuid())
   title       String
-  slug        String    @unique
+  slug        String   @unique
   date        String
   achievement String
   blogContent String
   thumbnail   String
   number      Int
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   @@index([number])
 }
 
 model Inquiry {
-  id          String    @id @default(cuid())
-  type        String           // "career" or "service"
-  name        String
-  email       String
-  phone       String
-  message     String
-  status      String   @default("pending") // "pending", "reviewed", "completed"
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  type      String
+  name      String
+  email     String
+  phone     String
+  message   String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Admin {
